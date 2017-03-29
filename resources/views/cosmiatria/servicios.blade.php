@@ -30,6 +30,7 @@
 
 @endif
 <?php $i++; ?>
+<hr class="featurette-divider">
 @endforeach
 
 

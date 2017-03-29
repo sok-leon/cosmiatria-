@@ -1,14 +1,18 @@
 @extends('layout')
 @section('contenido')
-<h1> Preguntas frecuentes </h1><br>
-<ul>
-  @foreach ($preguntas as $preguntas)
-    <li>
-        <h2><br>
-          {{ $preguntas->pregunta}}
-        </h2>
-        <p>{{ $preguntas->respuesta}}</p>
-    </li>
-  @endforeach
-</ul>
+<hr class="featurette-divider">
+  <div class="row featurette">
+    <h3>Preguntas frecuentes</h3>
+    <ul>
+      @foreach ($preguntas as $pregunta)
+        <li>
+            <h2>
+              {{ $pregunta->pregunta}}
+            </h2>
+              <strong>{{ $pregunta->respuesta}}</strong>
+
+        </li>
+      @endforeach
+    </ul>
+</div>
 @endsection
