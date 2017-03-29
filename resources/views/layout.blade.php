@@ -74,7 +74,9 @@
       @yield('servicios')
 
       <!-- /END THE FEATURETTES -->
+    
 
+      @yield('contacto')
 
       <!-- FOOTER -->
       <footer>
