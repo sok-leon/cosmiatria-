@@ -17,7 +17,7 @@
     </ul>
   </div>
   <div class="call">
-    <h1>Tel. :<span> telefono- </span></h1>
+    <h1>Tel. :<span> TELEFONO </span></h1>
   </div>
 </div>
 <!--- menu-wrapper div end -->
