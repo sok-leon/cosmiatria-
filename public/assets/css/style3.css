@@ -1,0 +1,38 @@
+@keyframes  slider
+{
+    0%   {left:0px; top:0px;}
+    20%  {left:0px; top:0px;}
+    25%  {left:-800px; top:0px;}
+    45%  {left:-800px; top:0px;}
+    50%  {left:-1600px; top:0px;}
+    70%  {left:-1600px; top:0px;}
+    75%  {left:-2400px; top:0px;}
+    95%  {left:-2400px; top:0px;}
+    100%  {left:-3200px; top:0px;}
+}
+
+#outerdiv
+{
+ position: relative;
+ left: 230px;
+ width: 798px;
+ height: 400px;
+ overflow: hidden;
+}
+
+#innerdiv
+{
+ position: relative;
+    width: 3200px;
+ 
+    animation-name: slider;
+    animation-duration: 20s;
+ animation-iteration-count: infinite;
+}
+
+div img
+{
+ position: relative;
+ bottom: 100px;
+ float: left;
+}
