@@ -17,7 +17,8 @@ class AdminController extends Controller
     public function index()
     {
       //$citas = citas::all();
-      return view('admin.principal');
+      return view('admin.layoutAdmin');
+      //return 'principal';
     }
 
     /**
@@ -38,7 +39,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.servicio');
     }
 
     /**
