@@ -1,4 +1,10 @@
 @extends('layout')
+@if(Session::has('message'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {{Session::get('message')}}
+</div>
+@endif
 @section('carrusel')
 
   <!-- Indicators -->
@@ -52,17 +58,23 @@
 @endsection
 
 @section('contacto')
-<div class="contact">
-      <input type="text" class="contact-input" name="name" id="nombre" value="nombre"/>
+<div class="row featurette">
+    <div class="col-md-7">
+      <form method="POST" action="CrearCita">
+     {!! csrf_field()!!}
+      <input type="text" class="contact-input" name="nombre" id="nombre" value="nombre"/>
       <input type="email" class="contact-input" name="mail" id="mail" value="Email"/>
       <input type="date" class="contact-input" name="fecha" id="fecha" value="fecha"/>
 
-           <select class="contact-input">
+           <select class="contact-input" name="servicio">
                 @foreach ($servicios as $servicios)
                 <option>{{ $servicios->nombre}}</option>
                 @endforeach
             </select>
 
-      <div class="button-link"><a href="#">Enviar</a></div>
+
+      <button type="submit" class="btn btn-default">Registrar</button>
+    </from>
+    </div>
 </div>
 @endsection

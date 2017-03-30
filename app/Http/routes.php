@@ -36,3 +36,5 @@ Route::get('preguntas', function () {
 
 //Route::get('admin', 'AdminController@index');
 Route::get('admin', 'AdminController@index');
+
+Route::post('CrearCita','ControllerPrincipal@store');
