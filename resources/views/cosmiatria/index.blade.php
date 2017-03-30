@@ -62,9 +62,9 @@
     <div class="col-md-7">
       <form method="POST" action="CrearCita">
      {!! csrf_field()!!}
-      <input type="text" class="contact-input" name="nombre" id="nombre" value="nombre"/>
-      <input type="email" class="contact-input" name="mail" id="mail" value="Email"/>
-      <input type="date" class="contact-input" name="fecha" id="fecha" value="fecha"/>
+      <input type="text" class="contact-input" name="nombre" id="nombre" />
+      <input type="email" class="contact-input" name="mail" id="mail" />
+      <input type="date" class="contact-input" name="fecha" id="fecha" />
 
            <select class="contact-input" name="servicio">
                 @foreach ($servicios as $servicios)
@@ -72,7 +72,25 @@
                 @endforeach
             </select>
 
-
+            <div class="container">
+          <div class="row">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                      <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker1').datetimepicker();
+                  });
+              </script>
+          </div>
+      </div>
       <button type="submit" class="btn btn-default">Registrar</button>
     </from>
     </div>

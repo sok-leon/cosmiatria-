@@ -42,6 +42,8 @@ class ControllerPrincipal extends Controller
      citas::create([
        'nombre'=>$request['nombre'],
        'servicio'=>$request['servicio'],
+       'email'=>$request['mail'],
+       'fecha'=>$request['fecha'],
      ]);
      return redirect()->to('/')->with('message','Solicitud enviada, confirmacion por correo');
 

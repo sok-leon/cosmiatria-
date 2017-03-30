@@ -16,6 +16,8 @@ class CreateCitasTables extends Migration
             $table->increments('id');
             $table->string('nombre',255);
             $table->string('servicio',255);
+            $table->string('mail',100);
+            $table->date('fecha',100);
             $table->timestamps();
         });
     }

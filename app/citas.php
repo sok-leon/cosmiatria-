@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class citas extends Model
 {
-    protected $fillable = ['nombre','servicio'];
+    protected $fillable = ['nombre','servicio','email','fecha'];
 }
