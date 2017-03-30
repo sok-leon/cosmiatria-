@@ -1,160 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Title -->
-        <title>Simulador CENEVAL</title>
-        <!-- Meta -->
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <!-- Favicon -->
-        <link href="favicon.ico" rel="shortcut icon">
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/assets/css/bootstrap.css" rel="stylesheet">
-        <!-- Template CSS -->
-        <link rel="stylesheet" href="assets/assets/css/animate.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/assets/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/assets/css/nexus.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/assets/css/responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/assets/css/custom.css" rel="stylesheet">
-        <!-- Google Fonts-->
-        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div id="body-bg">
-            <!-- Phone/Email -->
-            <div id="pre-header" class="background-gray-lighter">
-                <div class="container no-padding">
-                    <div class="row hidden-xs">
-                        <div class="col-sm-6 padding-vert-5">
-                            <strong></strong>
-                        </div>
-                        <div class="col-sm-6 text-right padding-vert-5">
-                            <strong></strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Phone/Email -->
-            <!-- Header -->
-             <div id="header">
-                <div class="container">
-                    <div class="row">
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="index.php" title="">
-                                <h1>Panel Admin</h1>
-                            </a>
-                        </div>
-                        <!-- End Logo -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Header -->
-            <!-- Top Menu -->
-            <div id="hornav" class="bottom-border-shadow">
-                <div class="container no-padding border-bottom">
-                    <div class="row">
-                        <div class="col-md-8 no-padding">
-                            <div class="visible-lg">
-                                <ul id="hornavmenu" class="nav navbar-nav">
-                                    <li>
-                                        <a href="indexpr.php" class="fa-home active">Inicio</a>
-                                    </li>
-                                    <li>
-                                        <span class="fa-gears ">Reactivo</span>
-                                        <ul>
-                                            <!--li>
-                                                <a href="features-buttons.html">Buttons</a>
-                                            </li-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-                                        </ul>
-                                    </li>
+    <title>Theme Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#about">Servicio</a></li>
+            <li><a href="#contact">Preguntas frecuentes</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+      <div class="page-header">
+        @yield('contenido')
+      </div>
 
 
 
-                                    <li>
-                                        <a href="modulos/salir.php" class="fa-times">Salir</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 no-padding">
-                            <ul class="social-icons pull-right">
+    </div> <!-- /container -->
 
-                                <li class="social-twitter">
-                                    <a href="#" target="_blank" title="Twitter"></a>
-                                </li>
-                                <li class="social-facebook">
-                                    <a href="#" target="_blank" title="Facebook"></a>
-                                </li>
 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Top Menu -->
-            <!-- === END HEADER === -->
-            <!-- === BEGIN CONTENT === -->
-            <div id="content">
-                <div class="container background-white">
-                    <div class="row margin-vert-30">
-                        <div class="col-md-12">
-                            <h2 class="margin-bottom-10">Bienvenido</h2></br>
-                            <!-- Intro / Why Us? -->
-                            @yield('contenido')
-                            <!-- End Intro / Why Us? -->
-                            <div class="row">
-                                <hr class="margin-top-20 margin-bottom-30">
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- === END CONTENT === -->
-
-            <div id="footer" class="background-grey">
-                <div class="container">
-                    <div class="row">
-                        <!-- Footer Menu -->
-                        <div id="footermenu" class="col-md-8">
-                            <ul class="list-unstyled list-inline">
-                                <li>
-                                    <a href="#" target="_blank">Cosmiatria Corporal</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- End Footer Menu -->
-                        <!-- Copyright -->
-                        <div id="copyright" class="col-md-4">
-                            <p class="pull-right">(c) 2016 Computer and Services Networking Inc.</p>
-                        </div>
-                        <!-- End Copyright -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer -->
-            <!-- JS -->
-            <script type="text/javascript" src="assets/assets/js/jquery.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="assets/assets/js/bootstrap.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="assets/assets/js/scripts.js"></script>
-            <!-- Isotope - Portfolio Sorting -->
-            <script type="text/javascript" src="assets/assets/js/jquery.isotope.js" type="text/javascript"></script>
-            <!-- Mobile Menu - Slicknav -->
-            <script type="text/javascript" src="assets/assets/js/jquery.slicknav.js" type="text/javascript"></script>
-            <!-- Animate on Scroll-->
-            <script type="text/javascript" src="assets/assets/js/jquery.visible.js" charset="utf-8"></script>
-            <!-- Sticky Div -->
-            <script type="text/javascript" src="assets/assets/js/jquery.sticky.js" charset="utf-8"></script>
-            <!-- Slimbox2-->
-            <script type="text/javascript" src="assets/assets/js/slimbox2.js" charset="utf-8"></script>
-            <!-- Modernizr -->
-            <script src="assets/assets/js/modernizr.custom.js" type="text/javascript"></script>
-            <!-- End JS -->
-    </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
 </html>
-<!-- === END FOOTER === -->
