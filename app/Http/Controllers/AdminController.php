@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\citas;
+use App\servicios;
 class AdminController extends Controller
 {
     /**
@@ -39,7 +40,22 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.servicio');
+        //return view('admin.servicio');
+        servicios::create([
+          'nombre'=>$request['nombre'],
+          'descripcion'=>$request['descripcion'],
+        ]);
+        return redirect()->to('admin/nServicio')->with('message','Servicio creado');
+    }
+
+    public function vista()
+    {
+      return view('admin.servicio');
+    }
+
+    public function vistaNS()
+    {
+      return view('admin.nServicio');
     }
 
     /**
