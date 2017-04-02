@@ -41,10 +41,16 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //return view('admin.servicio');
+        //obtenemos el archivo del formulario
+         $file = $request->file('file');
+        //obtenemos el nombre
+         $nombre = $file->getClientOriginalName();
+         //indicamos que queremos guardar un nuevo archivo en el disco local
+       \Storage::disk('local')->put($nombre,  \File::get($file));
         servicios::create([
           'nombre'=>$request['nombre'],
           'descripcion'=>$request['descripcion'],
+          'imagen' => $nombre,
         ]);
         return redirect()->to('admin/nServicio')->with('message','Servicio creado');
     }

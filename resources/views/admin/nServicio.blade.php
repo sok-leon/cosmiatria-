@@ -4,7 +4,7 @@
 @section('contenido')
 
 <h3>Crear nuevo servicio</h3>
-  <form class="form-inline" method="POST" action="CrearServicio">
+  <form class="form-inline" method="POST" action="CrearServicio" enctype="multipart/form-data">
     <div class="form-group">
       {!! csrf_field()!!}
       <label for="nombre">Nombre de servicio</label><br>
@@ -16,7 +16,7 @@
     </div><br><br>
     <div class="form-group">
       <label for="exampleInputFile">Elegir una imagen</label>
-      <input type="file" id="exampleInputFile">
+      <input type="file" id="exampleInputFile" name='file' required>
       <p class="help-block">Imagen del servicio.</p>
     </div>
     <br><br>
