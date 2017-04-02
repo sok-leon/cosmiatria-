@@ -39,5 +39,8 @@ Route::get('admin', 'AdminController@index');
 Route::get('admin/servicios','AdminController@vista');
 Route::get('admin/nServicio','AdminController@vistaNS');
 Route::post('admin/CrearServicio','AdminController@store');
+Route::get('admin/pregunta','AdminController@vistaP');
+Route::get('admin/nPregunta','AdminController@vistaNP');
+Route::post('admin/CrearPregunta','AdminController@nuevaP');
 
 Route::post('CrearCita','ControllerPrincipal@store');

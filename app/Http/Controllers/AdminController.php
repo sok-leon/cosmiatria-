@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\citas;
 use App\servicios;
+use App\preguntas;
 class AdminController extends Controller
 {
     /**
@@ -48,14 +49,33 @@ class AdminController extends Controller
         return redirect()->to('admin/nServicio')->with('message','Servicio creado');
     }
 
+    public function nuevaP(Request $request)
+    {
+        preguntas::create([
+          'pregunta'=>$request['pregunta'],
+          'respuesta'=>$request['respuesta'],
+        ]);
+        return redirect()->to('admin/nPregunta')->with('message','Pregunta creada');
+    }
+
     public function vista()
     {
       return view('admin.servicio');
     }
 
+    public function vistaP()
+    {
+      return view('admin.pregunta');
+    }
+
     public function vistaNS()
     {
       return view('admin.nServicio');
+    }
+
+    public function vistaNP()
+    {
+      return view('admin.nPregunta');
     }
 
     /**

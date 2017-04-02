@@ -8,11 +8,11 @@
     <div class="form-group">
       {!! csrf_field()!!}
       <label for="nombre">Nombre de servicio</label><br>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
     </div><br><br>
     <div class="form-group">
       <label for="descripcion">Descripción del servicio</label><br>
-      <input type="text" class="form-control" id="descripcion" name="descripcion" size="50" rows="5" placeholder="Descripción">
+      <input type="text" class="form-control" id="descripcion" name="descripcion" size="50" rows="5" placeholder="Descripción" required>
     </div><br><br>
     <div class="form-group">
       <label for="exampleInputFile">Elegir una imagen</label>
