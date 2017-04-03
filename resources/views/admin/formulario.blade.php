@@ -9,9 +9,15 @@
     <input type="text" class="form-control" id="descripcion" name="descripcion" size="50" rows="5" placeholder="Descripción" value="{{ $servicio->descripcion }}" required>
   </div><br><br>
   <div class="form-group">
-    <label for="exampleInputFile">Elegir una imagen</label>
-    <input type="file" id="exampleInputFile" name='file' required>
-    <p class="help-block">{{ $servicio->imagen }}</p>
+    @if( "{{$servicio-> imagen}}"  == "")
+      <label for="exampleInputFile">Elegir una imagen</label>
+      <input type="file" id="exampleInputFile" name="file" value="{{ $servicio->imagen }}" >
+      <p class="help-block">{{ $servicio->imagen }}</p>
+    @else
+      <label for="exampleInputFile">Elegir una imagen</label>
+      <input type="file" id="exampleInputFile" name="file" value="nooo" >
+      <p class="help-block">noooooo</p>
+    @endif
   </div>
 
 @else

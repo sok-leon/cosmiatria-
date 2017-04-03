@@ -106,7 +106,7 @@ class AdminController extends Controller
     public function edit($id)
     {
       $servicio = servicios::find($id);
-      return view('admin/edit',['servicio'=>$servicio]);
+      return view('admin.edit',['servicio'=>$servicio]);
     }
 
     /**
@@ -121,10 +121,18 @@ class AdminController extends Controller
       $serv = servicios::find($id);
      $serv->nombre     = $request->nombre;
      $serv->descripcion    = $request->descripcion;
-     $serv->imagen        =$request->file;
-     $serv->save();
-     Session::flash('message','Servicio Actualizado Correctamente');
-     return redirect()->to('admin.servicios');
+     if($request->file != "")
+     {
+       $imag = $request->file;
+       $nombre = $imag->getClientOriginalName();
+       \Storage::disk('local')->put($nombre,  \File::get($imag));
+       $serv->imagen        =$nombre;
+      }
+       $serv->save();
+     //Session::flash('message','Servicio Actualizado Correctamente');
+     //return redirect()->to('admin.servicios');
+     return redirect()->to('admin/servicios')->with('message','Servicio actualizado');
+    // echo($request);
     }
 
     /**

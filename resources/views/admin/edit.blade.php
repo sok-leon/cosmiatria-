@@ -1,10 +1,10 @@
 @extends('admin.layoutAdmin')
 @section('contenido')
 <h2>Actualizar datos</h2>
-<form method="POST" action="{{$servicio->id}}">
+<form method="POST" action="{{$servicio->id}}" enctype="multipart/form-data">
 
    {!! csrf_field()!!}
-   @include('admin.nServicio')
+   @include('admin.formulario')
    <br>
     <button type="submit" class="btn btn-default">Actualizar</button>
 </form>

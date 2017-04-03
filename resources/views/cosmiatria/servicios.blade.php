@@ -26,7 +26,7 @@
           <p class="lead">{{ $servicios->descripcion}}</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img src="/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg" class="img-responsive" >
+          <img src="/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg" alt="{{$url}}" class="img-responsive" >
         </div>
       </div>
 
