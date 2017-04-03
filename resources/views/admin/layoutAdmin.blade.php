@@ -59,6 +59,10 @@
         @yield('contenido')
       </div>
 
+      <div class="page-header">
+        @yield('tabla')
+      </div>
+
 
 
     </div> <!-- /container -->

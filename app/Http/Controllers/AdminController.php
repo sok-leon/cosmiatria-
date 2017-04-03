@@ -66,7 +66,9 @@ class AdminController extends Controller
 
     public function vista()
     {
-      return view('admin.servicio');
+      $servicios = servicios::all();
+      //return view('usuarios/principal',compact('usuarios'));
+      return view('admin.servicio', compact('servicios'));
     }
 
     public function vistaP()
@@ -103,7 +105,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+      $servicio = servicios::find($id);
+      return view('admin/edit',['servicio'=>$servicio]);
     }
 
     /**
@@ -115,7 +118,13 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $serv = servicios::find($id);
+     $serv->nombre     = $request->nombre;
+     $serv->descripcion    = $request->descripcion;
+     $serv->imagen        =$request->file;
+     $serv->save();
+     Session::flash('message','Servicio Actualizado Correctamente');
+     return redirect()->to('admin.servicios');
     }
 
     /**
@@ -126,6 +135,12 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+      try{
+         $user = servicios::findOrFail($id);
+         $user->delete();
+         return redirect()->to('admin/servicios')->with('message','Servicio eliminado');;
+     } catch (Exception $e){
+         return "Fatal error - ".$e->getMessage();
+     }
     }
 }

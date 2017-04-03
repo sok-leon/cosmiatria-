@@ -3,16 +3,18 @@
 
 <?php $i = 0; ?>
 @foreach ($servicios as $servicios)
+ <?php $image =  $servicios->imagen;?>
+ <?php $public_path = public_path();?>
+ <?php $url = $public_path.'/storage/'.$image;?>
   @if($i%2==0)
-
     <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">{{ $servicios->nombre}} <span class="text-muted"></span></h2>
-          <p class="lead">{{ $servicios->descripcion}}</p>
+          <p class="lead">{{$servicios->descripcion}}</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="{{URL::asset('/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg')}}" alt={{$url}}>
         </div>
       </div>
 
@@ -24,7 +26,7 @@
           <p class="lead">{{ $servicios->descripcion}}</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img src="/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg" class="img-responsive" >
         </div>
       </div>
 
