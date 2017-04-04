@@ -73,7 +73,8 @@ class AdminController extends Controller
 
     public function vistaP()
     {
-      return view('admin.pregunta');
+      $preguntas = preguntas::all();
+      return view('admin.pregunta',compact('preguntas'));
     }
 
     public function vistaNS()
@@ -150,5 +151,31 @@ class AdminController extends Controller
      } catch (Exception $e){
          return "Fatal error - ".$e->getMessage();
      }
+    }
+
+    public function elimina($id)
+    {
+      try{
+         $user = preguntas::findOrFail($id);
+         $user->delete();
+         return redirect()->to('admin/pregunta')->with('message','Pregunta eliminada');;
+     } catch (Exception $e){
+         return "Fatal error - ".$e->getMessage();
+     }
+    }
+
+    public function editarp($id)
+    {
+      $pregunta = preguntas::find($id);
+      return view('admin.editp',['pregunta'=>$pregunta]);
+    }
+
+    public function actualiza(Request $request, $id)
+    {
+      $preg = preguntas::find($id);
+     $preg->pregunta     = $request->pregunta;
+     $preg->respuesta    = $request->respuesta;
+     $preg->save();
+     return redirect()->to('admin/pregunta')->with('message','Pregunta actualizada');
     }
 }

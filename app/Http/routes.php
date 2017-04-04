@@ -51,5 +51,8 @@ Route::post('admin/CrearPregunta','AdminController@nuevaP');
 Route::get('edit/{usu}','AdminController@edit')->where('usu','[0-9]+');
 Route::post('edit/{usu}','AdminController@update');
 Route::get('eliminar/{usu}','AdminController@destroy')->where('usu','[0-9]+');
+Route::get('editp/{usu}','AdminController@editarp')->where('usu','[0-9]+');
+Route::post('editp/{usu}','AdminController@actualiza');
+Route::get('eliminarp/{usu}','AdminController@elimina')->where('usu','[0-9]+');
 
 Route::post('CrearCita','ControllerPrincipal@store');
