@@ -14,7 +14,7 @@
           <p class="lead">{{$servicios->descripcion}}</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="{{URL::asset('/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg')}}" alt={{$url}}>
+          <img class="featurette-image img-responsive center-block" src="{{URL::asset('storage/' . $servicios->imagen)}}" alt={{$url}}>
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <p class="lead">{{ $servicios->descripcion}}</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img src="/var/www/html/cosmiatria/public/storage/flores-animo-medellin.jpg" alt="{{$url}}" class="img-responsive" >
+          <img src="{{URL::asset('storage/' . $servicios->imagen)}}" alt="{{$url}}" class="img-responsive" >
         </div>
       </div>
 
