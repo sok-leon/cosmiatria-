@@ -16,9 +16,21 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Custom styles for this template -->
+<link href="carousel.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+<!-- Jquery -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Datepicker Files -->
+  <link rel="stylesheet" href="asset/datePicker/css/bootstrap-datepicker3.css">
+  <link rel="stylesheet" href="asset/datePicker/css/bootstrap-datepicker3.standalone.css">
+  <script src="asset/datePicker/js/bootstrap-datepicker.js"></script>
+  <!-- Languaje -->
+  <script src="asset/datePicker/locales/bootstrap-datepicker.es.min.js"></script>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -74,9 +86,21 @@
       @yield('servicios')
 
       <!-- /END THE FEATURETTES -->
-    
+
 
       @yield('contacto')
+
+
+
+
+
+<script>
+    $('.datepicker').datepicker({
+        format: "dd/mm/yyyy",
+        language: "es",
+        autoclose: true
+    });
+</script>
 
       <!-- FOOTER -->
       <footer>
@@ -92,7 +116,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!--script src="../../dist/js/bootstrap.min.js"></script-->
     <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>

@@ -13,10 +13,10 @@
 use App\citas;
 use App\servicios;
 use App\preguntas;
-Route::get('/', function () {
-  $servicios = servicios::all();
-    return view('cosmiatria.index',compact('servicios'));
-});
+Route::get('/', 'ControllerPrincipal@index');
+  //$servicios = servicios::all();
+    //return view('cosmiatria.index',compact('servicios'));
+//});
 
 Route::get('servicios', function () {
 
@@ -38,4 +38,4 @@ Route::get('preguntas', function () {
 Route::get('admin', 'AdminController@index');
 Route::get('admin/servicios','AdminController@store');
 
-Route::post('CrearCita','ControllerPrincipal@store');
+Route::post('/CrearCita','ControllerPrincipal@store');

@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\citas;
+use App\Hora;
+use App\servicios;
 class ControllerPrincipal extends Controller
 {
     /**
@@ -14,9 +17,15 @@ class ControllerPrincipal extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+
+        //$obj = Hora::findOrFail("1");
+      //  $obj = DB::table('servicios')->get();
+        //dd($obj);
+        $hora = Hora::all();
+      $servicios = servicios::all();
+        //return view('cosmiatria.index',['servicio' => $servicios]);
+        return view('cosmiatria.index',compact('servicios','hora'));
     }
 
     /**
@@ -42,8 +51,9 @@ class ControllerPrincipal extends Controller
      citas::create([
        'nombre'=>$request['nombre'],
        'servicio'=>$request['servicio'],
-       'email'=>$request['mail'],
-       'fecha'=>$request['fecha'],
+       'mail'=>$request['mail'],
+       'fecha'=>$request['date']->toDateString(),
+       'hora'=>$request['hora'],
      ]);
      return redirect()->to('/')->with('message','Solicitud enviada, confirmacion por correo');
 
