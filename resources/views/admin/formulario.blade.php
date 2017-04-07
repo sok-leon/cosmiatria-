@@ -16,7 +16,7 @@
     @else
       <label for="exampleInputFile">Elegir una imagen</label>
       <input type="file" id="exampleInputFile" name="file" value="nooo" >
-      <p class="help-block">noooooo</p>
+      <p class="help-block">Sin imagen</p>
     @endif
   </div>
 

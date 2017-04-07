@@ -35,9 +35,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="admin/servicios">Servicio</a></li>
-            <li><a href="admin/pregunta">Preguntas frecuentes</a></li>
+            <li class="active"><a href="{{URL::asset('admin')}}">Inicio</a></li>
+            <li><a href="{{URL::asset('admin/servicios')}}">Servicio</a></li>
+            <li><a href="{{URL::asset('admin/pregunta')}}">Preguntas frecuentes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
