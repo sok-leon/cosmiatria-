@@ -1,8 +1,14 @@
-@extends('admin.layoutAdmin')
-@section('contenido')
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" type="text/css">
+
+</head>
+<body>
 <h2>Citas</h2>
-<table class="table table-striped">
-  <thead>
+<table class="table" id="citasTabla">
+<thead>
       <tr class="danger">
           <td >Citas</td>
           <td>Nombre</td>
@@ -12,8 +18,8 @@
           <td>Correo</td>
           <td></td>
       </tr>
-  </thead>
-  <tbody>
+</thead>
+<tbody>
     @foreach($citas as $cita)
       <tr>
         <td>  {{$cita->id}} </td>
@@ -29,8 +35,19 @@
           <a href=" ">Eliminar</a>
         </td>
       </tr>
-      </tbody>
+
     @endforeach
-  </tbody>
+</tbody>
 </table>
-@endsection
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+</body>
+<script>
+$(document).ready(function(){
+    $('#citasTabla').DataTable();
+});
+</script>
+</html>
