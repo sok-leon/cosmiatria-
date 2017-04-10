@@ -1,11 +1,5 @@
-<html>
-<head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" type="text/css">
-
-</head>
-<body>
+@extends('admin.layoutAdmin')
+@section('contenido')
 <h2>Citas</h2>
 <table class="table" id="citasTabla">
 <thead>
@@ -39,15 +33,4 @@
     @endforeach
 </tbody>
 </table>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-
-</body>
-<script>
-$(document).ready(function(){
-    $('#citasTabla').DataTable();
-});
-</script>
-</html>
+@endsection
