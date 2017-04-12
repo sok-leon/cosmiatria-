@@ -42,6 +42,7 @@ Route::get('preguntas', function () {
 
 //Route::get('admin', 'AdminController@index');
 Route::get('admin', 'AdminController@index');
+Route::get('admin/login','AdminController@vLogin');
 Route::get('admin/servicios','AdminController@vista');
 Route::get('admin/nServicio','AdminController@vistaNS');
 Route::post('admin/CrearServicio','AdminController@store');
