@@ -13,10 +13,10 @@
 use App\citas;
 use App\servicios;
 use App\preguntas;
-Route::get('/', function () {
-  $servicios = servicios::all();
-    return view('cosmiatria.index',compact('servicios'));
-});
+Route::get('/', 'ControllerPrincipal@index');
+  //$servicios = servicios::all();
+    //return view('cosmiatria.index',compact('servicios'));
+//});
 
 Route::get('servicios', function () {
   //$imagens = servicios::imagen();
@@ -56,4 +56,4 @@ Route::get('editp/{usu}','AdminController@editarp')->where('usu','[0-9]+');
 Route::post('editp/{usu}','AdminController@actualiza');
 Route::get('eliminarp/{usu}','AdminController@elimina')->where('usu','[0-9]+');
 
-Route::post('CrearCita','ControllerPrincipal@store');
+Route::post('/CrearCita','ControllerPrincipal@store');
