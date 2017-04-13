@@ -13,10 +13,14 @@
 use App\citas;
 use App\servicios;
 use App\preguntas;
+use Illuminate\Mail\Message;
+
+
 Route::get('/', 'ControllerPrincipal@index');
   //$servicios = servicios::all();
     //return view('cosmiatria.index',compact('servicios'));
 //});
+Route::get('citaConfirmar/{usu}','AdminController@confirmarcion');
 
 Route::get('servicios', function () {
   //$imagens = servicios::imagen();
@@ -56,3 +60,12 @@ Route::post('editp/{usu}','AdminController@actualiza');
 Route::get('eliminarp/{usu}','AdminController@elimina')->where('usu','[0-9]+');
 
 Route::post('/CrearCita','ControllerPrincipal@store');
+
+
+Route::get('email', function () { //funcion de prueba de envio de correo 
+
+  Mail::send('emails.confirmacion',['name'=> 'sok'], function (Message $message){
+    $message ->to('theonesok@gmail.com','larave')
+        ->from('laravelsokdesa@gmail.com','Styed');
+  });
+});

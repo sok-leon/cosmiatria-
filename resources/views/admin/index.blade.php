@@ -23,7 +23,7 @@
         <td>  {{$cita->servicio}} </td>
         <td>  {{$cita->mail}} </td>
         <td>
-          <a href=" ">Confirmar  </a>
+          <a href="{!! URL::to('/citaConfirmar/'.$cita->id) !!}">Confirmar  </a>
           <a href=" ">  Reagendar</a>
           <br>
           <a href=" ">Eliminar</a>

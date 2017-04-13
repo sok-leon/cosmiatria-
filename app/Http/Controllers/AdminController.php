@@ -9,13 +9,14 @@ use App\Http\Controllers\Controller;
 use App\citas;
 use App\servicios;
 use App\preguntas;
+use Mail;
+use Session;
+use Redirect;
+use Illuminate\Mail\Message;
+
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
       $citas = citas::all();
@@ -23,22 +24,21 @@ class AdminController extends Controller
       //return 'principal';
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function confirmarcion($id){
+      $cita = citas::findOrFail($id);
+      Mail::send('emails.confirmacion',compact('cita'), function (Message $message) use($cita){
+        $message ->to('theonesok@gmail.com',$cita->nombre)
+            ->from('laravelsokdesa@gmail.com','Cosmiatria Company');
+      });;
+      return redirect()->to('admin')->with('message','Correo enviado!');
+    }
+
     public function store(Request $request)
     {
         //obtenemos el archivo del formulario
@@ -87,36 +87,20 @@ class AdminController extends Controller
       return view('admin.nPregunta');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
       $servicio = servicios::find($id);
       return view('admin.edit',['servicio'=>$servicio]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
       $serv = servicios::find($id);
