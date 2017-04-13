@@ -40,6 +40,7 @@
             <li class="active"><a href="{{URL::asset('admin')}}">Inicio</a></li>
             <li><a href="{{URL::asset('admin/servicios')}}">Servicio</a></li>
             <li><a href="{{URL::asset('admin/pregunta')}}">Preguntas frecuentes</a></li>
+            <li class="glyphicon glyphicon-cog"><a href="#" target="_blank" title="Facebook"></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

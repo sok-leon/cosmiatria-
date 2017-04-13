@@ -82,6 +82,11 @@ class AdminController extends Controller
       return view('admin.nServicio');
     }
 
+    public function vLogin()
+    {
+      return view('admin.login');
+    }
+
     public function vistaNP()
     {
       return view('admin.nPregunta');
