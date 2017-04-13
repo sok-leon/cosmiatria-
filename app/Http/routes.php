@@ -20,7 +20,12 @@ Route::get('/', 'ControllerPrincipal@index');
   //$servicios = servicios::all();
     //return view('cosmiatria.index',compact('servicios'));
 //});
-Route::get('citaConfirmar/{usu}','AdminController@confirmarcion');
+Route::get('citaConfirmar/{cita}','AdminController@confirmarcion');
+Route::get('eliminarCita/{cita}','AdminController@eliminarCita')->where('cita','[0-9]+');
+Route::get('actualizarCita/{cita}', function(){
+  return view('admin/contactoEditar');
+});
+
 
 Route::get('servicios', function () {
   //$imagens = servicios::imagen();
@@ -63,7 +68,7 @@ Route::get('eliminarp/{usu}','AdminController@elimina')->where('usu','[0-9]+');
 Route::post('/CrearCita','ControllerPrincipal@store');
 
 
-Route::get('email', function () { //funcion de prueba de envio de correo 
+Route::get('email', function () { //funcion de prueba de envio de correo
 
   Mail::send('emails.confirmacion',['name'=> 'sok'], function (Message $message){
     $message ->to('theonesok@gmail.com','larave')

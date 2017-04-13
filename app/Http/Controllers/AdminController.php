@@ -33,9 +33,13 @@ class AdminController extends Controller
     public function confirmarcion($id){
       $cita = citas::findOrFail($id);
       Mail::send('emails.confirmacion',compact('cita'), function (Message $message) use($cita){
-        $message ->to('theonesok@gmail.com',$cita->nombre)
-            ->from('laravelsokdesa@gmail.com','Cosmiatria Company');
+        $message ->to($cita->mail,$cita->nombre)
+            ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
+            ->subject('Confirmación Cita');
       });;
+
+      $cita->estatus = true;
+      $cita->save();
       return redirect()->to('admin')->with('message','Correo enviado!');
     }
 
@@ -152,6 +156,36 @@ class AdminController extends Controller
          return "Fatal error - ".$e->getMessage();
      }
     }
+
+    public function eliminarCita($id)
+    {
+      try{
+        $cita = citas::findOrFail($id);
+        Mail::send('emails.eliminarCita',compact('cita'), function (Message $message) use($cita){
+          $message ->to($cita->mail,$cita->nombre)
+              ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
+              ->subject('Cancelación');
+        });;
+
+        $cita->delete();
+        return redirect()->to('admin')->with('message','Cita eliminado');;
+     } catch (Exception $e){
+         return "Fatal error - ".$e->getMessage();
+     }
+    }
+
+    public function actualizarCita(Request $request, $id)
+    {
+        $cita = citas::findOrFail($id);
+        Mail::send('emails.eliminarCita',compact('cita'), function (Message $message) use($cita){
+          $message ->to($cita->mail,$cita->nombre)
+              ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
+              ->subject('Cancelación');
+        });;
+        $cita->save();
+        return redirect()->to('admin')->with('message','Cita Actualizada');;
+    }
+
 
     public function editarp($id)
     {

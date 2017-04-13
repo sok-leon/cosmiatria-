@@ -19,6 +19,7 @@ class CreateCitasTables extends Migration
             $table->string('mail',255);
             $table->date('fecha',255);
             $table->integer('hora');
+            $table->boolean('estatus');
             $table->timestamps();
         });
     }

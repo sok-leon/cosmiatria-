@@ -10,7 +10,7 @@
           <td>Fecha</td>
             <td>Servicio</td>
           <td>Correo</td>
-          <td></td>
+          <td>Accción </td>
       </tr>
 </thead>
 <tbody>
@@ -22,14 +22,24 @@
         <td>  {{$cita->fecha}} </td>
         <td>  {{$cita->servicio}} </td>
         <td>  {{$cita->mail}} </td>
-        <td>
-          <a href="{!! URL::to('/citaConfirmar/'.$cita->id) !!}">Confirmar  </a>
-          <a href=" ">  Reagendar</a>
-          <br>
-          <a href=" ">Eliminar</a>
-        </td>
-      </tr>
 
+
+        <td>
+          <a href="{!! URL::to('/actualizarCita/'.$cita->id) !!}" class="btn btn-warning btn-default btn-sm btn-block"
+            role="button">Reagendar</a>
+          <a href="{!! URL::to('/eliminarCita/'.$cita->id) !!}" class="btn btn-danger btn-default btn-sm btn-block"
+            role="button">Eliminar</a>
+        </td>
+        @if($cita->estatus == false)
+        <td>
+          <div class="btn-group">
+            <a href="{!! URL::to('/citaConfirmar/'.$cita->id) !!}"
+              class="btn btn-success btn-primary btn-sm btn-block "
+              role="button">Confirmar</a>
+          </div>
+        </td>
+        @endif
+      </tr>
     @endforeach
 </tbody>
 </table>

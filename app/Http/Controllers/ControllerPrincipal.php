@@ -54,6 +54,7 @@ class ControllerPrincipal extends Controller
        'mail'=>$request['mail'],
        'fecha'=>$request['date'],
        'hora'=>$request['hora'],
+       'estatus'=>false,
      ]);
      return redirect()->to('/')->with('message','Solicitud enviada, confirmacion por correo');
 
