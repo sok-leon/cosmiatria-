@@ -16,8 +16,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Custom styles for this template -->
-<link href="carousel.css" rel="stylesheet">
+
 
 
 <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
@@ -91,16 +90,6 @@
       @yield('contacto')
 
 
-
-
-
-<script>
-    $('.datepicker').datepicker({
-        format: "yyyy/mm/dd",
-        language: "es",
-        autoclose: true
-    });
-</script>
 
       <!-- FOOTER -->
       <footer>

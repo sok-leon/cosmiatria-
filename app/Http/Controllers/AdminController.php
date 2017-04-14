@@ -199,7 +199,6 @@ class AdminController extends Controller
               ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
               ->subject('Cancelación');
         });;*/
-        $cita->nombre = $request->nombre;
         $cita->servicio = $request->servicio;
         $cita->mail = $request->mail;
         $cita->fecha = $request->date;

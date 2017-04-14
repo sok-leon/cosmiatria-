@@ -50,7 +50,7 @@
                    <div class='col-sm-6'>
                        <div class="form-group">
                            <div class='input-group date'>
-                             <select class="form-control" name="hora" value=4>
+                             <select class="form-control" name="hora">
                                   @foreach ($hora as $h)
                                     @if($cita->hora == $h->hora)
                                         <option selected>{{ $h->hora}}</option>
@@ -65,20 +65,20 @@
                </div>
            </div>
 
-        <div class="container">
-          <div class="row">
-              <div class='col-sm-2'>
-                  <div class="form-group">
-                      <div class='input-group date' id='datetimepicker1'>
-                          <input type="text" class="form-control datepicker" name="date" value={{$cita->fecha}}>
-                          <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+           <div class="container">
+             <div class="row">
+                 <div class='col-sm-2'>
+                     <div class="form-group">
+                         <div class='input-group date' id='datetimepicker1'>
+                             <input type="text" class="form-control datepicker" name="date" value={{$cita->fecha}}>
+                             <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                             </span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
 
 @else
 <div class="row featurette">
@@ -163,3 +163,12 @@
 </div>
 
 @endif
+
+<script>
+    $('.datepicker').datepicker({
+        format: "yyyy/mm/dd",
+        language: "es",
+        autoclose: true,
+        inline: true
+    });
+</script>
