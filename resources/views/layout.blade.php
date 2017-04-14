@@ -85,7 +85,7 @@
       @yield('servicios')
 
       <!-- /END THE FEATURETTES -->
-
+      <br>
       <div class="col-lg-4">
           @yield('contacto')
       </div>

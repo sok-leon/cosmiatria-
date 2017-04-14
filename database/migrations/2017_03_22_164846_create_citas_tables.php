@@ -17,6 +17,7 @@ class CreateCitasTables extends Migration
             $table->string('nombre',255);
             $table->string('servicio',255);
             $table->string('mail',255);
+            $table->string('numero',255);
             $table->date('fecha',255);
             $table->integer('hora');
             $table->boolean('estatus');

@@ -203,6 +203,7 @@ class AdminController extends Controller
         $cita->mail = $request->mail;
         $cita->fecha = $request->date;
         $cita->hora = $request->hora;
+        $cita->numero = $request->telefono;
         $cita->save();
         return redirect()->to('admin')->with('message','Cita Actualizada');;
     }

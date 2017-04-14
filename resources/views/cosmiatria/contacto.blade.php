@@ -64,7 +64,9 @@
                    </div>
                </div>
            </div>
-
+           <input type="text" class="form-control input-medium bfh-phone" name="telefono" id="telefono" placeholder="Teléfono*" data-format="+1 (ddd) ddd-dddd"
+                    value={{ $cita->numero}} />
+           <br>
            <div class="container">
              <div class="row">
                  <div class='col-sm-2'>
@@ -96,7 +98,7 @@
             <br>
             <input type="email" class="form-control" name="mail" id="mail" placeholder="Email*"/>
             <br>
-            <input type="email" class="form-control" name="telefono" id="telefono" placeholder="Teléfono*"/>
+            <input type="text" class="form-control input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" name="telefono" id="telefono" placeholder="Teléfono*"/>
             <br>
             <select class="form-control" name="servicio">
               <option value="" disabled selected>Selecciona Servicio* </option>

@@ -5,25 +5,25 @@
 <table  class="table" id="citas">
     <thead>
           <tr class="danger">
-              <td >Citas</td>
+
               <td>Nombre</td>
               <td>Hora</td>
               <td>Fecha</td>
                 <td>Servicio</td>
               <td>Correo</td>
+              <td >Telefono</td>
               <td>Accción </td>
           </tr>
     </thead>
     <tbody>
         @foreach($citas as $cita)
           <tr>
-            <td>  {{$cita->id}} </td>
             <td>  {{$cita->nombre}} </td>
             <td>  {{$cita->hora}} </td>
             <td>  {{$cita->fecha}} </td>
             <td>  {{$cita->servicio}} </td>
             <td>  {{$cita->mail}} </td>
-
+            <td>  {{$cita->numero}} </td>
 
             <td>
               <a href="{!! URL::to('/actualizarCita/'.$cita->id) !!}" class="btn btn-warning btn-default btn-sm btn-block"
