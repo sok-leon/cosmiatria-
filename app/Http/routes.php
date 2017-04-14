@@ -22,9 +22,8 @@ Route::get('/', 'ControllerPrincipal@index');
 //});
 Route::get('citaConfirmar/{cita}','AdminController@confirmarcion');
 Route::get('eliminarCita/{cita}','AdminController@eliminarCita')->where('cita','[0-9]+');
-Route::get('actualizarCita/{cita}', function(){
-  return view('admin/contactoEditar');
-});
+Route::get('actualizarCita/{cita}','AdminController@actualizarCita')->where('cita','[0-9]+');
+Route::post('actualizarCita/{cita}','AdminController@actualizarCitaPost');
 
 
 Route::get('servicios', function () {

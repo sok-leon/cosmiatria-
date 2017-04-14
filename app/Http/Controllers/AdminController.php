@@ -13,6 +13,7 @@ use Mail;
 use Session;
 use Redirect;
 use Illuminate\Mail\Message;
+use App\Hora;
 
 class AdminController extends Controller
 {
@@ -174,14 +175,35 @@ class AdminController extends Controller
      }
     }
 
-    public function actualizarCita(Request $request, $id)
+    public function actualizarCita($id)
     {
         $cita = citas::findOrFail($id);
-        Mail::send('emails.eliminarCita',compact('cita'), function (Message $message) use($cita){
+        $hora = Hora::all();
+        $servicios = servicios::all();
+        return view('admin.reagendar',compact('cita','hora','servicios'));
+        /*Mail::send('emails.eliminarCita',compact('cita'), function (Message $message) use($cita){
           $message ->to($cita->mail,$cita->nombre)
               ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
               ->subject('Cancelación');
-        });;
+        });;*/
+        //$cita->save();
+        //return redirect()->to('admin')->with('message','Cita Actualizada');;
+    }
+
+    public function actualizarCitaPost(Request $request, $id)
+    {
+        $cita = citas::findOrFail($id);
+
+        /*Mail::send('emails.eliminarCita',compact('cita'), function (Message $message) use($cita){
+          $message ->to($cita->mail,$cita->nombre)
+              ->from('laravelsokdesa@gmail.com','Cosmiatria Company')
+              ->subject('Cancelación');
+        });;*/
+        $cita->nombre = $request->nombre;
+        $cita->servicio = $request->servicio;
+        $cita->mail = $request->mail;
+        $cita->fecha = $request->date;
+        $cita->hora = $request->hora;
         $cita->save();
         return redirect()->to('admin')->with('message','Cita Actualizada');;
     }
