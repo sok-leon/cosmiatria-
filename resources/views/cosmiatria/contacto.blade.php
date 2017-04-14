@@ -98,7 +98,7 @@
             <br>
             <input type="email" class="form-control" name="mail" id="mail" placeholder="Email*"/>
             <br>
-            <input type="text" class="form-control input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" name="telefono" id="telefono" placeholder="Teléfono*"/>
+            <input type="text" class="form-control input-medium bfh-phone" data-country="US" name="telefono" id="telefono" placeholder="Teléfono*" />
             <br>
             <select class="form-control" name="servicio">
               <option value="" disabled selected>Selecciona Servicio* </option>
