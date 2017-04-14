@@ -81,84 +81,48 @@
          </div>
 
 @else
-<div class="row featurette">
-    <div class="col-md-7">
+<div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">¡No esperes más!</h3>
+      <p>Solicita tú cita de manera muy rápida y facil</p>
+    </div>
       <form method="POST" action="CrearCita">
      {!! csrf_field()!!}
 
-      <div class="container">
-        <div class="row">
-            <div class='col-sm-10'>
-                <div class="form-group">
-                    <div class='input-group'>
-                        <input type="text" class="contact-input" name="nombre" id="nombre" />
-                    </div>
-                </div>
+
+        <div class="panel-body">
+
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre completo*" />
+            <br>
+            <input type="email" class="form-control" name="mail" id="mail" placeholder="Email*"/>
+            <br>
+            <input type="email" class="form-control" name="telefono" id="telefono" placeholder="Teléfono*"/>
+            <br>
+            <select class="form-control" name="servicio">
+              <option value="" disabled selected>Selecciona Servicio* </option>
+              @foreach ($servicios as $servicio)
+              <option>{{ $servicio->nombre}}</option>
+              @endforeach
+            </select>
+            <br>
+            <select class="form-control" name="hora">
+              <option value="" disabled selected>Selecciona hora* </option>
+              @foreach ($hora as $h)
+              <option>{{ $h->hora}}</option>
+              @endforeach
+            </select>
+            <br>
+            <div class='input-group date' id='datetimepicker1'>
+              <input type="text" class="form-control datepicker" name="date" placeholder="Fecha">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
             </div>
-        </div>
-    </div>
+            <br>
 
-      <div class="container">
-        <div class="row">
-            <div class='col-sm-6'>
-                <div class="form-group">
-                    <div class='input-group '>
-                        <input type="email" class="contact-input" name="mail" id="mail" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-            <div class="container">
-              <div class="row">
-                  <div class='col-sm-6'>
-                      <div class="form-group">
-                          <div class='input-group date' id='datetimepicker1'>
-                            <select class="form-control" name="servicio">
-                                 @foreach ($servicios as $servicio)
-                                 <option>{{ $servicio->nombre}}</option>
-                                 @endforeach
-                             </select>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-             <div class="container">
-               <div class="row">
-                   <div class='col-sm-6'>
-                       <div class="form-group">
-                           <div class='input-group date'>
-                             <select class="form-control" name="hora">
-                                  @foreach ($hora as $h)
-                                  <option>{{ $h->hora}}</option>
-                                  @endforeach
-                              </select>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-
-        <div class="container">
-          <div class="row">
-              <div class='col-sm-2'>
-                  <div class="form-group">
-                      <div class='input-group date' id='datetimepicker1'>
-                          <input type="text" class="form-control datepicker" name="date">
-                          <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <button type="submit" class="btn btn-default">Registrar</button>
-    </from>
+            <button type="submit" class="btn btn-default">Registrar</button>
+          </from>
+          <br>
     </div>
 </div>
 

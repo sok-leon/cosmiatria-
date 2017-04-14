@@ -61,12 +61,12 @@
       </div>
     </div>
 
-
+  <div class="container">
     <!-- Carousel
     ================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-@yield('carrusel')
-</div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        @yield('carrusel')
+    </div>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
@@ -86,18 +86,21 @@
 
       <!-- /END THE FEATURETTES -->
 
+      <div class="col-lg-4">
+          @yield('contacto')
+      </div>
 
-      @yield('contacto')
 
 
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
 
     </div><!-- /.container -->
+    <!-- FOOTER -->
+
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </div>
 
 
     <!-- Bootstrap core JavaScript
