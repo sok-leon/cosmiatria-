@@ -50,9 +50,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="{{URL::asset('/')}}">Inicio</a></li>
-                <li><a href="{{URL::asset('/servicios')}}">Sercivios</a></li>
-                <li><a href="{{URL::asset('/preguntas')}}">Preguntas Frecuantes</a></li>
+                <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{URL::asset('/')}}">Inicio</a></li>
+                <li class="{{ Request::is('servicios') ? 'active' : '' }}"><a href="{{URL::asset('/servicios')}}">Sercivios</a></li>
+                <li class="{{ Request::is('preguntas') ? 'active' : '' }}"><a href="{{URL::asset('/preguntas')}}">Preguntas Frecuantes</a></li>
               </ul>
             </div>
           </div>

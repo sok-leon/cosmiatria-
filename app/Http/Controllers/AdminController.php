@@ -76,6 +76,13 @@ class AdminController extends Controller
       return view('admin.servicio', compact('servicios'));
     }
 
+    public function vp()
+    {
+      //$prom = servicios::all();
+      return view('admin.promocion');
+    }
+
+
     public function vistaP()
     {
       $preguntas = preguntas::all();

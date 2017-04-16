@@ -13,6 +13,8 @@
 use App\citas;
 use App\servicios;
 use App\preguntas;
+use App\promocion;
+
 use Illuminate\Mail\Message;
 
 
@@ -47,6 +49,8 @@ Route::get('preguntas', function () {
   return view('cosmiatria/preguntas',compact('preguntas'));
   //  return view('cosmiatria/servicios');
 });
+
+Route::get('admin/promocion', 'AdminController@vp');
 
 //Route::get('admin', 'AdminController@index');
 Route::get('admin', 'AdminController@index');

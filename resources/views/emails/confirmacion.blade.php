@@ -8,13 +8,13 @@
     <p>Hola, estamid@:<strong> {{$cita->nombre}}</strong><br>
 
       <dd>Hemos recibido y ACEPTADO su cita para el servicio solicitado {{$cita->servicio}}
-      el dia {{$cita->fecha}} a la hora que nos indico {{$cita->hora}} hrs.<br>
+      el día {{$cita->fecha}} a la hora que nos indico {{$cita->hora}} hrs.<br>
 
 	<br>
-      Agradecemos su preferencia esperamos sea puntualidad, gracias.<br>
+      Agradecemos su preferencia esperamos sea puntual, gracias.<br>
 
       <br>Att.<br>
-      Cosmetologa XXXX XXXX
+      Cosmetológa Elizabeth Parra.
     </p>
   </body>
 </html>
