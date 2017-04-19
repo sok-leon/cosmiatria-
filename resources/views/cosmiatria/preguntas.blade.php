@@ -5,11 +5,11 @@
 @foreach ($preguntas as $pregunta)
 
   @if($i%2==0)
-    <hr class="featurette-divider">
+  
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">{{ $pregunta->pregunta}} <span class="text-muted"></span></h2>
-          <p class="bg-danger">{{$pregunta->respuesta}}</p>
+          <p class="lead">{{$pregunta->respuesta}}</p>
         </div>
         <div class="col-md-5">
           <img src="" alt="" class="img-responsive" >
