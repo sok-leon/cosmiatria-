@@ -53,8 +53,11 @@ Route::get('preguntas', function () {
 Route::get('admin/promocion', 'AdminController@vp');
 
 //Route::get('admin', 'AdminController@index');
-Route::get('admin', 'AdminController@index');
-Route::get('admin/login','AdminController@vLogin');
+Route::get('admin', [
+  'uses'  => 'AdminController@index',
+  'as'    => 'admin'
+]);
+
 Route::get('admin/servicios','AdminController@vista');
 Route::get('admin/nServicio','AdminController@vistaNS');
 Route::post('admin/CrearServicio','AdminController@store');
@@ -78,3 +81,15 @@ Route::get('email', function () { //funcion de prueba de envio de correo
         ->from('laravelsokdesa@gmail.com','Styed');
   });
 });
+
+// Authentication routes...
+Route::get('login',[
+  'uses'  => 'Auth\AuthController@getLogin',
+  'as'    => 'login'
+]);
+
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', [
+  'uses' => 'Auth\AuthController@getLogout',
+  'as'   => 'logout'
+]);

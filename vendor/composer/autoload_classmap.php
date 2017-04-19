@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateCitasTables' => $baseDir . '/database/migrations/2017_03_22_164846_create_citas_tables.php',
-    'CreateImagenTable' => $baseDir . '/database/migrations/2017_04_16_031946_create_imagen_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePreguntasTable' => $baseDir . '/database/migrations/2017_03_24_141405_create_preguntas_table.php',
     'CreateServiciosTable' => $baseDir . '/database/migrations/2017_03_24_111126_create_servicios_table.php',
@@ -526,4 +525,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
 );
