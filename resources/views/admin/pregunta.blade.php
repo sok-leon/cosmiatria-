@@ -4,7 +4,7 @@
 @endsection
 @section('tabla')
 <h2>Preguntas</h2>
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
       <tr class="danger">
           <td >Id</td>

@@ -41,13 +41,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Admin Cosmiatría</a>
+          <a class="navbar-brand" href="{{URL::asset('admin')}}">Admin Cosmiatría</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{URL::asset('admin')}}">Inicio</a></li>
             <li class="{{ Request::is('admin/servicios') ? 'active' : '' }}"><a href="{{URL::asset('admin/servicios')}}">Servicio</a></li>
-            <li class="{{ Request::is('admin/pregunta') ? 'active' : '' }}"><a href="{{URL::asset('admin/pregunta')}}">Preguntas frecuentes</a></li>
+            <li class="{{ Request::is('admin/pregunta') ? 'active' : '' }}"><a href="{{URL::asset('admin/pregunta')}}">Preguntas Frecuentes</a></li>
             <li class="{{ Request::is('admin/promocion') ? 'active' : '' }}"><a href="{{URL::asset('admin/promocion')}}">Promociones</a></li>
             <li class="glyphicon glyphicon-cog"><a href="#" target="_blank" title="Facebook"></a></li>
           </ul>

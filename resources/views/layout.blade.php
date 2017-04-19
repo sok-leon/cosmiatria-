@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
+
     <title>Cosmiatría</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -46,13 +47,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Cosmiatría</a>
+              <a class="navbar-brand" href="{{URL::asset('/')}}">Cosmiatría</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{URL::asset('/')}}">Inicio</a></li>
                 <li class="{{ Request::is('servicios') ? 'active' : '' }}"><a href="{{URL::asset('/servicios')}}">Sercivios</a></li>
-                <li class="{{ Request::is('preguntas') ? 'active' : '' }}"><a href="{{URL::asset('/preguntas')}}">Preguntas Frecuantes</a></li>
+                <li class="{{ Request::is('preguntas') ? 'active' : '' }}"><a href="{{URL::asset('/preguntas')}}">Preguntas Frecuentes</a></li>
               </ul>
             </div>
           </div>
@@ -90,7 +91,9 @@
           @yield('contacto')
       </div>
 
-
+      <div class="col-lg-8">
+        @yield('mapa')
+      </div>
 
 
     </div><!-- /.container -->

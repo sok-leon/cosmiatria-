@@ -14,6 +14,7 @@ use Session;
 use Redirect;
 use Illuminate\Mail\Message;
 use App\Hora;
+use App\promocion;
 
 class AdminController extends Controller
 {
@@ -76,10 +77,10 @@ class AdminController extends Controller
       return view('admin.servicio', compact('servicios'));
     }
 
-    public function vp()
+    public function vistapromocion()
     {
-      //$prom = servicios::all();
-      return view('admin.promocion');
+      $promocion = promocion::all();
+      return view('admin.promocion',compact('promocion'));
     }
 
 
@@ -220,6 +221,29 @@ class AdminController extends Controller
     {
       $pregunta = preguntas::find($id);
       return view('admin.editp',['pregunta'=>$pregunta]);
+    }
+
+    public function editpromo($id)
+    {
+      $promocion = promocion::find($id);
+      return view('admin.editprom', ['promocion'=>$promocion]);
+    }
+
+    public function actpromo(Request $request, $id)
+    {
+      $promocion = promocion::find($id);
+     if($request->file != "")
+     {
+       $imag = $request->file;
+       $nombre = $imag->getClientOriginalName();
+       \Storage::disk('local')->put($nombre,  \File::get($imag));
+       $promocion->imagen        =$nombre;
+      }
+       $promocion->save();
+     //Session::flash('message','Servicio Actualizado Correctamente');
+     //return redirect()->to('admin.servicios');
+     return redirect()->to('admin/promocion')->with('message','Imagen actualizada');
+    // echo($request);
     }
 
     public function actualiza(Request $request, $id)

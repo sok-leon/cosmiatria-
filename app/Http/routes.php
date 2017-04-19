@@ -17,8 +17,8 @@ use App\promocion;
 
 use Illuminate\Mail\Message;
 
-
-Route::get('/', 'ControllerPrincipal@index');
+Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
+Route::get('/', ['as ' => 'gmaps', 'uses' =>  'ControllerPrincipal@index']);
   //$servicios = servicios::all();
     //return view('cosmiatria.index',compact('servicios'));
 //});
@@ -50,11 +50,13 @@ Route::get('preguntas', function () {
   //  return view('cosmiatria/servicios');
 });
 
-Route::get('admin/promocion', 'AdminController@vp');
+Route::get('admin/promocion', 'AdminController@vistapromocion');
 
 //Route::get('admin', 'AdminController@index');
 Route::get('admin', 'AdminController@index');
-Route::get('admin/login','AdminController@vLogin');
+Route::get('login', function (){
+  return view('admin/app');
+});
 Route::get('admin/servicios','AdminController@vista');
 Route::get('admin/nServicio','AdminController@vistaNS');
 Route::post('admin/CrearServicio','AdminController@store');
@@ -68,6 +70,9 @@ Route::get('editp/{usu}','AdminController@editarp')->where('usu','[0-9]+');
 Route::post('editp/{usu}','AdminController@actualiza');
 Route::get('eliminarp/{usu}','AdminController@elimina')->where('usu','[0-9]+');
 
+Route::get('editprom/{usu}','AdminController@editpromo')->where('usu','[0-9]+');
+Route::post('editprom/{usu}','AdminController@actpromo');
+
 Route::post('/CrearCita','ControllerPrincipal@store');
 
 
@@ -77,4 +82,12 @@ Route::get('email', function () { //funcion de prueba de envio de correo
     $message ->to('theonesok@gmail.com','larave')
         ->from('laravelsokdesa@gmail.com','Styed');
   });
+
 });
+
+
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', ['as' =>'auth/login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout', ['as' => 'auth/logout', 'uses' => 'Auth\AuthController@getLogout']);
